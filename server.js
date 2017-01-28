@@ -14,7 +14,6 @@ app.all('*', function(req, res, next) {
 });
 
 app.listen(4567);
-
 console.log('Listening on port 4567');
 
 github_handler.on('error', function (err) {
