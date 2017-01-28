@@ -22,14 +22,15 @@ handler.on('error', function (err) {
 });
 
 handler.on('*', function (event) {
-  console.log('Received an event for %s action=%s: #%d %s',
+  console.log('Received an event for repo=%s user=%s event=%s',
     event.payload.repository.name,
-    event.payload.action,
-    event.payload.ref,
-    event.payload.sender.login);
+    event.payload.sender.login,
+    event.event);
   newrelic.addCustomParameters({
-    "user": event.payload.sender.login,
-    "event": event
+    "github_user": event.payload.sender.login,
+    "github_repo": event.payload.repository.name,
+    "github_event": event.event 
   });
+  console.log("\n\n");
   console.log(JSON.stringify(event));
 });
