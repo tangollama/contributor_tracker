@@ -1,1 +1,1 @@
-We're tracking events in a GitHub repo and logging them in New Relic so that we can make some magic. Let's see where this goes.
+We're tracking events in a GitHub repo and logging them in New Relic so that we can make some magic with Slack and Twitter. Let's see where this goes.
