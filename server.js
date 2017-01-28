@@ -5,7 +5,7 @@ var createHandler = require('github-webhook-handler');
 var github_handler = createHandler({ path: '/github', secret: process.env.SECRET_TOKEN });
 
 app.all('*', function(req, res, next) {
-  console.log(`Processing for ${req.body}`);
+  //console.log(`Processing for ${req.body}`);
   github_handler(req, res, function (err) {
     res.statusCode = 404;
     res.end('no such location');
